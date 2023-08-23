@@ -11,6 +11,6 @@
 
 IP-адрес 127.0.0.1
 
-Frontend https://someadress.ru
+Frontend https://...
 
-Backend https://someadress.ru
+Backend https://...
