@@ -51,4 +51,4 @@ class Auth {
   }
 }
 
-export const auth = new Auth('https://auth.nomoreparties.co');
+export const auth = new Auth('http://127.0.0.1:3001');

@@ -4,7 +4,7 @@ const NotOwnerError = require('../errors/NotOwnerError');
 
 const getCards = (req, res, next) => {
   card.find({})
-    .then((results) => res.send({ data: results }))
+    .then((results) => res.send(results))
     .catch(next);
 };
 
@@ -12,7 +12,7 @@ const createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   card.create({ name, link, owner: req.user._id })
-    .then((result) => res.status(201).send({ data: result }))
+    .then((result) => res.status(201).send(result))
     .catch(next);
 };
 
@@ -29,7 +29,7 @@ const deleteCard = (req, res, next) => {
 
       return card.findByIdAndRemove(req.params.cardId);
     })
-    .then((result) => res.send({ data: result }))
+    .then((result) => res.send(result))
     .catch(next);
 };
 
@@ -52,7 +52,7 @@ const removeLike = (req, res, next) => {
         throw new NotFoundError('Карточка с указанным _id не найдена');
       }
 
-      res.send({ data: result });
+      res.send(result);
     })
     .catch(next);
 };

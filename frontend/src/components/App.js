@@ -35,7 +35,7 @@ function App() {
   React.useEffect(() => {
     api.getInitialCards()
       .then((res) => {
-        setCards(res);
+        setCards(res.toReversed());
       })
       .catch((error) => {
         console.log(error)
@@ -160,7 +160,7 @@ function App() {
     jwt && auth.checkToken(jwt)
       .then((res) => {
         setIsLoggedIn(true);
-        setHeaderEmail(res.data.email);
+        setHeaderEmail(res.email);
         navigate('/');
       })
       .catch((error) => {

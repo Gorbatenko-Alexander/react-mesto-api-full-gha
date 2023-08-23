@@ -7,7 +7,7 @@ const NotUniqueError = require('../errors/NotUniqueError');
 
 const getUsers = (req, res, next) => {
   user.find({})
-    .then((results) => res.send({ data: results }))
+    .then((results) => res.send(results))
     .catch(next);
 };
 
@@ -17,7 +17,7 @@ const getUser = (req, res, next) => {
       if (!result) {
         throw new NotFoundError('Пользователь по указанному _id не найден');
       } else {
-        res.send({ data: result });
+        res.send(result);
       }
     })
     .catch(next);
@@ -41,12 +41,10 @@ const createUser = (req, res, next) => {
       password: hash,
     }))
     .then((result) => res.status(201).send({
-      data: {
-        name,
-        about,
-        avatar,
-        email,
-      },
+      name,
+      about,
+      avatar,
+      email,
     }))
     .catch((err) => {
       if (err.code === 11000) {
@@ -64,7 +62,7 @@ const updateUserInfo = (req, res, next) => {
       if (!result) {
         throw new NotFoundError('Пользователь по указанному _id не найден');
       } else {
-        res.send({ data: result });
+        res.send(result);
       }
     })
     .catch(next);
@@ -78,7 +76,7 @@ const updateUserAvatar = (req, res, next) => {
       if (!result) {
         throw new NotFoundError('Пользователь по указанному _id не найден');
       } else {
-        res.send({ data: result });
+        res.send(result);
       }
     })
     .catch(next);
@@ -98,7 +96,7 @@ const login = (req, res, next) => {
 
 const getCurrentUser = (req, res, next) => {
   user.findById(req.user._id)
-    .then((result) => res.send({ data: result }))
+    .then((result) => res.send(result))
     .catch(next);
 };
 
