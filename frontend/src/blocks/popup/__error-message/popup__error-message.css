@@ -1,0 +1,18 @@
+.popup__error-message {
+  width: 100%;
+  min-height: 30px;
+  visibility: hidden;
+  display: block;
+  z-index: 3;
+  position: relative;
+  transition: 0.1s;
+  overflow: hidden;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  word-break: break-all;
+  margin: 5px 0 -15px;
+  padding: 0;
+}

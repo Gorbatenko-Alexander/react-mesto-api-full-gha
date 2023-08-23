@@ -1,0 +1,10 @@
+.popup__pic-container {
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  cursor: default;
+}

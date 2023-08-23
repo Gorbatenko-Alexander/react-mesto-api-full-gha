@@ -1,0 +1,8 @@
+.header__text_hover {
+  font-weight: 400;
+}
+
+.header__text_hover:hover {
+  opacity: 60%;
+  cursor: pointer;
+}

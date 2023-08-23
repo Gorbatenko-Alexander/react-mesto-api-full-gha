@@ -1,0 +1,9 @@
+.auth-page__link {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.auth-page__link:hover {
+  opacity: 60%;
+}

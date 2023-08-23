@@ -1,0 +1,25 @@
+.auth-page__field {
+  width: 100%;
+  height: 37px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #CCC;
+  padding: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: transparent;
+  color: white;
+  transition: border-bottom-color 0.2s;
+}
+
+.auth-page__field:focus {
+  outline: none;
+  border-bottom: 2px solid #FFF;
+}
+
+.auth-page__field::placeholder {
+  color: #CCC;
+  opacity: 100%;
+}

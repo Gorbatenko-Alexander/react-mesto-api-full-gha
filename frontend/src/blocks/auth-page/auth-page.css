@@ -1,0 +1,11 @@
+.auth-page {
+  width: 100vw;
+  height: calc(100vh - 120px);
+  padding: 0 19px;
+  display: flex;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,1);
+  transition: 0.5s;
+  font-size: 0;
+  color: white;
+}

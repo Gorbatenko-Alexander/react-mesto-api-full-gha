@@ -1,0 +1,7 @@
+.popup__status-img {
+  width: 120px;
+  aspect-ratio: 1;
+  display: block;
+  padding: 0;
+  margin: 60px auto 32px;
+}
