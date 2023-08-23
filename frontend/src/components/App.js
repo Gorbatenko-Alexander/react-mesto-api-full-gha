@@ -32,26 +32,6 @@ function App() {
 
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    api.getInitialCards()
-      .then((res) => {
-        setCards(res.toReversed());
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  }, [])
-
-  React.useEffect(() => {
-    api.getUserInfo()
-      .then((res) => {
-        setCurrentUser(res);
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  }, [])
-
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   }
@@ -102,7 +82,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(like => like._id === currentUser._id);
+    const isLiked = card.likes.some(like => like === currentUser._id);
 
     api.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
@@ -114,7 +94,7 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
 
     isOwn && api.deleteCard(card._id)
       .then(() => {
@@ -159,9 +139,22 @@ function App() {
     const jwt = localStorage.getItem('jwt');
     jwt && auth.checkToken(jwt)
       .then((res) => {
-        setIsLoggedIn(true);
+        api.headers.Authorization = 'Bearer ' + jwt;
         setHeaderEmail(res.email);
-        navigate('/');
+      })
+      .then(() => {
+        return api.getInitialCards()
+          .then((res) => {
+            setCards(res.toReversed());
+          })
+      })
+      .then(() => {
+        return api.getUserInfo()
+          .then((res) => {
+            setCurrentUser(res);
+            setIsLoggedIn(true);
+            navigate('/');
+          })
       })
       .catch((error) => {
         console.log(error)

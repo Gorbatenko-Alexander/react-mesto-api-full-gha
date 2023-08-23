@@ -40,7 +40,7 @@ const addLike = (req, res, next) => {
         throw new NotFoundError('Карточка с указанным _id не найдена');
       }
 
-      res.send({ data: result });
+      res.send(result);
     })
     .catch(next);
 };
