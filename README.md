@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 127.0.0.1
 
-Frontend https://...
+Frontend https://someadress.ru
 
-Backend https://...
+Backend https://someadress.ru
