@@ -5,6 +5,8 @@ const user = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const NotUniqueError = require('../errors/NotUniqueError');
 
+const { JWT_SECRET = 'enc-key-should-be-here' } = process.env;
+
 const getUsers = (req, res, next) => {
   user.find({})
     .then((results) => res.send(results))
@@ -88,7 +90,7 @@ const login = (req, res, next) => {
   return user.findUserByCreds(email, password)
     .then((result) => {
       res.send({
-        token: jwt.sign({ _id: result._id }, 'enc-key-should-be-here', { expiresIn: '7d' }),
+        token: jwt.sign({ _id: result._id }, JWT_SECRET, { expiresIn: '7d' }),
       });
     })
     .catch(next);

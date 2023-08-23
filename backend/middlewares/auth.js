@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+const { JWT_SECRET = 'enc-key-should-be-here' } = process.env;
+
 const NotAuthorizedError = require('../errors/NotAuthorizedError');
 
 function auth(req, res, next) {
@@ -14,12 +16,13 @@ function auth(req, res, next) {
   let payload;
 
   try {
-    payload = jwt.verify(token, 'enc-key-should-be-here');
+    payload = jwt.verify(token, JWT_SECRET);
   } catch (e) {
     next(err);
   }
 
   req.user = payload;
+
   next();
 }
 
