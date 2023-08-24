@@ -108,11 +108,11 @@ function App() {
   function handleRegisterSubmit(password, email) {
     auth.register(password, email)
       .then((res) => {
-        setIsRegError(false); // Значения передавались как строки, исправил
+        setIsRegError(false);
         navigate("/sign-in");
       })
       .catch((error) => {
-        setIsRegError(true); // Значения передавались как строки, исправил
+        setIsRegError(true);
         console.log(error);
       })
       .finally(() => {
