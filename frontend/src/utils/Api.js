@@ -95,7 +95,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'http://127.0.0.1:3000',
+  baseUrl: 'https://api.mestodep.nomoredomainsicu.ru',
   headers: {
     authorization: 'Bearer ' + localStorage.getItem('jwt'),
     'Content-Type': 'application/json'

@@ -54,4 +54,4 @@ class Auth {
   }
 }
 
-export const auth = new Auth('http://127.0.0.1:3000');
+export const auth = new Auth('https://api.mestodep.nomoredomainsicu.ru');
