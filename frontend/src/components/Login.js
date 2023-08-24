@@ -40,7 +40,7 @@ function Login(props) {
             </label>
             <label className="auth-page__input-container">
               <input value={password} type="password" id="profile-about" name="about" className="auth-page__field" placeholder="Пароль"
-                     required onChange={handlePasswordChange}/>
+                     minLength="8" required onChange={handlePasswordChange}/>
               <span className="auth-page__error-message"></span>
             </label>
             <button type="submit" className='auth-page__submit-button'>Войти</button>
