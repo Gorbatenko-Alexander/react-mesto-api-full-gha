@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 127.0.0.1
+IP-адрес 158.160.120.131
 
-Frontend https://...
+Frontend https://mestodep.nomoredomainsicu.ru/
 
-Backend https://...
+Backend https://api.mestodep.nomoredomainsicu.ru/
