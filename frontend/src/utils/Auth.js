@@ -46,8 +46,8 @@ class Auth {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        'content-type': 'application/json',
+        'authorization': `Bearer ${token}`,
       }
     })
       .then(this._checkStatus)

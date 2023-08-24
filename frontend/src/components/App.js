@@ -120,7 +120,7 @@ function App() {
       });
   }
 
-  function handleLoginSubmit(password, email) { // Не могу воспроизвести проблему, добавил в ридми видео проверки, перепроверил несколько раз локально и на деплое, в том числе на смартфоне, всё работает нормально, если ничего не происходил - значит вводились неверные данные. Если ошибка повторяется - прошу прислать видео или скриншот.
+  function handleLoginSubmit(password, email) {
     auth.authorise(password, email)
       .then((res) => {
         localStorage.setItem('jwt', res.token);
@@ -141,7 +141,7 @@ function App() {
     const jwt = localStorage.getItem('jwt');
     jwt && auth.checkToken(jwt)
       .then((res) => {
-        api.headers.Authorization = 'Bearer ' + jwt;
+        api.headers.authorization = 'Bearer ' + jwt; // Ошибку вроде нашёл, она была в Хроме, в Firefox было всё нормально, проблема была в регистре authorization
         setHeaderEmail(res.email);
       })
       .then(() => {
