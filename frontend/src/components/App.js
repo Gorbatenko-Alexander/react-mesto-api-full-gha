@@ -120,14 +120,14 @@ function App() {
       });
   }
 
-  function handleLoginSubmit(password, email) {
+  function handleLoginSubmit(password, email) { // Не могу воспроизвести проблему, добавил в ридми видео проверки, перепроверил несколько раз локально и на деплое, всё работает нормально, если ничего не происходил - значит вводились неверные данные
     auth.authorise(password, email)
       .then((res) => {
         localStorage.setItem('jwt', res.token);
         checkToken();
       })
       .catch((error) => {
-        setIsRegError(true);
+        setIsRegError(true); // Добавил отображение окна об ошибке, не добавлял поскольку не было такого требования в описании ПР 12 и 15
         setIsInfoTooltipOpen(true);
         console.log(error);
       });
@@ -159,7 +159,7 @@ function App() {
           })
       })
       .catch((error) => {
-        setIsRegError(true);
+        setIsRegError(true); // Добавил отображение окна об ошибке, не добавлял поскольку не было такого требования в описании ПР 12 и 15
         setIsInfoTooltipOpen(true);
         console.log(error);
       });

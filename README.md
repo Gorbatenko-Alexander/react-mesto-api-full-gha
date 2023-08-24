@@ -5,6 +5,8 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
+Видео проверки работы логина https://disk.yandex.ru/i/j8N4SFTrTJWQNw
+
 Адрес репозитория: https://github.com/Gorbatenko-Alexander/react-mesto-api-full-gha
 
 ## Ссылки на проект
