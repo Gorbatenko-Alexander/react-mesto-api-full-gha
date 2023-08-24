@@ -127,7 +127,9 @@ function App() {
         checkToken();
       })
       .catch((error) => {
-        console.log(error)
+        setIsRegError(true);
+        setIsInfoTooltipOpen(true);
+        console.log(error);
       });
   }
 
@@ -157,7 +159,9 @@ function App() {
           })
       })
       .catch((error) => {
-        console.log(error)
+        setIsRegError(true);
+        setIsInfoTooltipOpen(true);
+        console.log(error);
       });
   }
 
@@ -170,7 +174,7 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setSelectedCard({});
-    setIsInfoTooltipOpen(false)
+    setIsInfoTooltipOpen(false);
   }
 
   return (
