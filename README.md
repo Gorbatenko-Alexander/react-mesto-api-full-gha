@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.120.131
+IP 158.160.120.131
 
 Frontend https://mestodep.nomoredomainsicu.ru/
 
