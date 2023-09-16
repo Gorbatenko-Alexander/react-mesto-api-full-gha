@@ -14,17 +14,16 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 const { PORT = 3000 } = process.env;
-const corsOptions = {
-  origin: ['https://mestodep.nomoredomainsicu.ru'],
-};
 
-app.use( (req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://mestodep.nomoredomainsicu.ru');
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+// app.use( (req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader('Access-Control-Allow-Methods', '*');
+//   res.setHeader('Access-Control-Allow-Headers', '*');
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+//   next();
+// });
+
+app.use(cors());
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
