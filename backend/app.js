@@ -15,7 +15,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const app = express();
 const { PORT = 3000 } = process.env;
 const corsOptions = {
-  origin: ['*'],
+  origin: ['https://mestodep.nomoredomainsicu.ru'],
 };
 
 app.use(cors(corsOptions));
