@@ -14,13 +14,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 const { PORT = 3000 } = process.env;
-const corsOptions = {
-  origin: ['http://localhost:3000', 'http://mestodep.nomoredomainsicu.ru', 'https://mestodep.nomoredomainsicu.ru'],
-  credentials: true,
-  maxAge: 30
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
