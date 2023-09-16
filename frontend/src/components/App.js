@@ -1,9 +1,9 @@
 import React from 'react';
-import {Route, Routes, useNavigate} from "react-router-dom"
+import {Route, Routes, useNavigate} from "react-router-dom";
 
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
 import {api} from "../utils/Api";
-import {auth} from "../utils/Auth"
+import {auth} from "../utils/Auth";
 
 import Header from './Header.js';
 import Main from './Main.js';
@@ -135,6 +135,7 @@ function App() {
 
   function handleLogout() {
     localStorage.setItem('jwt', '');
+    checkToken();
   }
 
   function checkToken() {
