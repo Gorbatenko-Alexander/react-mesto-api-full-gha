@@ -10,6 +10,7 @@
 @import url(./blocks/header/__text/header__text.css);
 @import url(./blocks/header/__text/_darker/header__text_darker.css);
 @import url(./blocks/header/__text/_hover/header__text_hover.css);
+@import url(./blocks/header/__text/_email/header__text_email.css);
 @import url(./blocks/main/main.css);
 @import url(./blocks/page/page.css);
 @import url(./blocks/places/places.css);

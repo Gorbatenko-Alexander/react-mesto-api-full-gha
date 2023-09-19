@@ -1,0 +1,12 @@
+.header__text_email {
+  max-width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 760px) {
+  .header__text_email {
+    display: none;
+  }
+}

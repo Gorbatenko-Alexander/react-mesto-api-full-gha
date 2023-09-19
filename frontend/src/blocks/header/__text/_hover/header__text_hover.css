@@ -6,3 +6,9 @@
   opacity: 60%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 925px) {
+  .header__text_hover {
+    margin: auto 28px auto auto;
+  }
+}

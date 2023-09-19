@@ -2,7 +2,7 @@ import React from 'react';
 import success from '../images/success.svg'
 import error from '../images/error.svg'
 
-function ImagePopup(props) {
+function InfoTooltip(props) {
   return (
     <div className={`popup ${props.isOpen ? 'popup_opened' : ''}`}>
 
@@ -18,4 +18,4 @@ function ImagePopup(props) {
   );
 }
 
-export default ImagePopup;
+export default InfoTooltip;
