@@ -26,7 +26,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(!!localStorage.getItem('jwt'));
   const [isRegError, setIsRegError] = React.useState(false);
   const [headerEmail, setHeaderEmail] = React.useState('');
 
@@ -134,7 +134,7 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.setItem('jwt', '');
+    localStorage.clear();
     checkToken();
   }
 
@@ -160,6 +160,7 @@ function App() {
           })
       })
       .catch((error) => {
+        localStorage.clear();
         setIsRegError(true); // Добавил отображение окна об ошибке, не добавлял поскольку не было такого требования в описании ПР 12 и 15
         setIsInfoTooltipOpen(true);
         console.log(error);
